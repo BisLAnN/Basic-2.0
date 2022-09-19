@@ -12,12 +12,12 @@ namespace Basic.Core
     {
         public static IEnumerable<User> ParseFile(string path)
         {
-            foreach (string line in File.ReadAllLines("users1.txt").Skip(1))
+            foreach (string line in File.ReadAllLines("users2.txt").Skip(1))
             {
                 string[] props = line.Split(';');
 
-                yield return new User(props[0], props[1], props[2],
-                    Convert.ToInt32(props[3]), Convert.ToDecimal(props[4]));
+                yield return new User(Convert.ToInt32(props[0]), props[1],
+                    Convert.ToDateTime(props[2]), Convert.ToDecimal(props[3]));
             }
         }
     }

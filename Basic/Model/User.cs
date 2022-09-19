@@ -8,34 +8,31 @@ namespace Basic.Model
 {
     public class User
     {
-        public string FirstName { get; set; }
-        public string MiddleName { get; set; }
-        public string LastName { get; set; }
-        public int Age { get; set; }
+        public int ID { get; set; }
+        public string FullName { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public decimal Salary { get; set; }
 
 
         public User()
         {
-            FirstName = string.Empty;
-            MiddleName = string.Empty;
-            LastName = string.Empty;
-            Age = int.MinValue;
+            ID = int.MinValue;
+            FullName = string.Empty;
+            DateOfBirth = DateTime.MinValue;
             Salary = decimal.MinValue;
         }
 
-        public User(string firstName, string middleName, string lastName, int age,
+        public User(int id, string fullName, DateTime dateOfBirth,
             decimal salary)
         {
-            FirstName = firstName;
-            MiddleName = middleName;
-            LastName = lastName;
-            Age = age;
+            ID = id;
+            FullName = fullName;
+            DateOfBirth = dateOfBirth;
             Salary = salary;
         }
 
 
-        public override string ToString() => $"ФИО: {FirstName} {MiddleName} {LastName}\n" +
-            $"Дата рождения: {Age}\n" + $"Зарплата:{Salary}";
+        public override string ToString() => $"ID:{ID}\n"+$"ФИО: {FullName}\n" +
+            $"Дата рождения: {DateOfBirth}\n" + $"Зарплата:{Salary}";
     }
 }

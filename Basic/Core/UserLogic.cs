@@ -9,8 +9,8 @@ namespace Basic.Core
 {
     public static class UserLogic
     {
-        public static User FindUserByFirstName(List<User> users, string firstName)
-            => users.FirstOrDefault(user => user.FirstName == firstName);
+        public static User FindUserByFirstName(List<User> users, string fullName)
+            => users.FirstOrDefault(user => user.FullName == fullName);
 
         public static bool Validate(string login, string password) =>
             login == "bislan" && password == "1036";
